@@ -57,14 +57,19 @@ export default function Games() {
         {filteredGames.length > 0 ? (
           filteredGames.map((game, i) => (
             <div key={i} className={styles.game_card}>
-              <Image
-                src={game.imgUrl}
-                alt={game.name}
-                width={100}
-                height={200}
-                className={styles.game_img}
-              />
-              <p>{game.category}</p>
+              <div className={styles.game_card_two}>
+                <Image
+                  src={game.imgUrl}
+                  alt={game.name}
+                  width={100}
+                  height={100}
+                  className={styles.game_img}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
+              <p> Categories:{game.category}</p>
+              <p>Name:{game.name}</p>
             </div>
           ))
         ) : (
